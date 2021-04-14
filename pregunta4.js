@@ -21,9 +21,20 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
-  function addDiscoveries(inventor, discoveries, inventors){
-      
+  function addDescubrimientos(inventor, discoveries, inventors){ //podria hacerlo con map (inventors.map(inv => [comparar e ingresar el array como propiedad inv.discovers = discoveries])) //armar codigo
+    for(let i = 0; i < inventors.lenght-1; i++){
+      if(inventors[i].last ===inventor){
+        inventors[i].discovers = discoveries;
+      }
+    }
+    return inventors;
   }
+
+/*   function addDescubrimientos(inventor, discoveries, inventors){ 
+  const addDescubrimientos = inventors.map(inv => {
+    inv.last === inventor ? inv.discovs = discoveries
+  })
+  } */
 
   console.log(addDescubrimientos('Einstein', 
   ['Teoría de la relatividad especial','Equivalencia entre masa y energía','Teoría de la relatividad general'], inventors
